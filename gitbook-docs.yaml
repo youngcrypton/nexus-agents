@@ -5,6 +5,7 @@ site:
     - type: space
       key: nexus-agents
       title: Nexus Agents
-      path: ""
+      path: litepaper
+      default: true
       content:
         directory: ./
