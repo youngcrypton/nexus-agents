@@ -7,7 +7,8 @@
   "scripts": {
     "build": "tsc",
     "demo": "tsx src/demo.ts",
-    "test": "tsx test/runtime.test.ts"
+    "test": "tsx test/runtime.test.ts",
+    "test:e2e": "tsx test/e2e.test.ts"
   },
   "keywords": [
     "elysium",
