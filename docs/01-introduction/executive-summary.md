@@ -11,7 +11,7 @@ On standard rollups and Layer 1 networks, autonomous agents are shackled by mult
 ---
 
 ## Core Value Pillars
-| 🤖 Agentic Marketplace | ⚡ Sub-Second Reflexes | 💎 Ascend-Native Playbook |
+| Agentic Marketplace | Sub-Second Reflexes | Ascend-Native Playbook |
 | :--- | :--- | :--- |
 | **Autonomous Coordination**<br/>Discover, hire, lease, and compose specialized AI agents with on-chain milestone escrow. | **Sub-Second Execution**<br/>100–200 ms canonical blocks & 300 Mgas/s paired with zero-gas ~70ms precompiles. | **Fair Token Lifecycle**<br/>Fair launch via Ascend Closed Hook Pools; systematic progression to HyperCore Spot CLOB. |
 

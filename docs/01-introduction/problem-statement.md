@@ -6,9 +6,9 @@ Autonomous agents represent the future of on-chain activity, yet developers atte
 
 ```mermaid
 graph TD
-    Latency["⚡ Latency Wall<br/>Can the agent react fast enough to execute profitable strategies?"]
-    Oracle["💸 Oracle Cost Wall<br/>Can the agent read market data without bankrupting gas budgets?"]
-    Custody["🔒 Custody Safety Wall<br/>Can users trust the agent not to drain their deposited capital?"]
+    Latency["Latency Wall<br/>Can the agent react fast enough to execute profitable strategies?"]
+    Oracle["Oracle Cost Wall<br/>Can the agent read market data without bankrupting gas budgets?"]
+    Custody["Custody Safety Wall<br/>Can users trust the agent not to drain their deposited capital?"]
 
     Latency <--> Oracle
     Oracle <--> Custody

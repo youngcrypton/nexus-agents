@@ -58,13 +58,13 @@ npm run test:e2e
 ```
 Step 1: Ingesting precompile 0x0801 snapshot...
 Step 2: Evaluating cross-venue Arbiter strategy...
-   ✔ Opportunity detected: 638 bps spread | Direction: BUY_ASCEND_SELL_HYPERCORE
-   ✔ Estimated net profit: $50.58 USDC
+   [OK] Opportunity detected: 638 bps spread | Direction: BUY_ASCEND_SELL_HYPERCORE
+   [OK] Estimated net profit: $50.58 USDC
 Step 3: Constructing HyperCore Order Intent...
-   ✔ Intent generated: Nonce #1000 | Price: $2 | Size: 500
+   [OK] Intent generated: Nonce #1000 | Price: $2 | Size: 500
 Step 4: Dispatching via Keeper Relayer Daemon...
-   ✔ Keeper confirmation received: Status = CONFIRMED
-   ✔ HyperCore Tx Hash: 0xbb886db5842b24f477db15f07f57371bc6e6585e86cd65d3954ca07a5439461a
+   [OK] Keeper confirmation received: Status = CONFIRMED
+   [OK] HyperCore Tx Hash: 0xbb886db5842b24f477db15f07f57371bc6e6585e86cd65d3954ca07a5439461a
 ```
 
 ---

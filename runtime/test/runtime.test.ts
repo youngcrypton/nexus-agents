@@ -38,7 +38,7 @@ const market: SpotMarketSummary = {
   assert(bidOrder.price < market.midPrice, "Bid price must be below mid");
   assert(askOrder.price > market.midPrice, "Ask price must be above mid");
   assert(askOrder.price > bidOrder.price, "Ask must be higher than Bid");
-  console.log("✔ SentryStrategy symmetric quote test passed");
+  console.log("[PASS] SentryStrategy symmetric quote test passed");
 }
 
 // Test 2: Sentry Strategy Inventory Skew
@@ -50,7 +50,7 @@ const market: SpotMarketSummary = {
 
   // When holding heavy token, quote prices should be skewed lower to shed inventory
   assert(skewedQuotes.bidOrder.price < 1995000n, "Bid should skew lower when inventory is heavy");
-  console.log("✔ SentryStrategy inventory skew test passed");
+  console.log("[PASS] SentryStrategy inventory skew test passed");
 }
 
 // Test 3: Arbiter Strategy Cross-Venue Filter
@@ -71,7 +71,7 @@ const market: SpotMarketSummary = {
   const intent = arbiter.buildHyperCoreIntent(opp);
   assert(intent !== null);
   assert.strictEqual(intent.isBuy, false, "HyperCore leg should sell high");
-  console.log("✔ ArbiterStrategy profitable spread detection passed");
+  console.log("[PASS] ArbiterStrategy profitable spread detection passed");
 }
 
 // Test 4: Arbiter Strategy Rejection on Tight Spread
@@ -86,7 +86,7 @@ const market: SpotMarketSummary = {
   // Ascend price $1.99 vs $2.00 is ~50 bps raw, minus 100 bps Ascend fee = negative net spread
   const tightOpp = arbiter.evaluateSpread(market, 1.99);
   assert.strictEqual(tightOpp.hasOpportunity, false);
-  console.log("✔ ArbiterStrategy tight spread rejection passed");
+  console.log("[PASS] ArbiterStrategy tight spread rejection passed");
 }
 
 console.log("\nAll @nexus/runtime unit tests passed successfully! (4/4)");

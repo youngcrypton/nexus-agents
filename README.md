@@ -1,10 +1,10 @@
 <div align="center">
 
-# ⚡ NEXUS AGENTS (`@nexus/runtime`)
+# NEXUS AGENTS (`@nexus/runtime`)
 
 ### Sub-Second Autonomous AI Agent Marketplace & Execution Engine for Elysium L2
 
-**Official Hackathon Submission: Ascend Token Launch Framework & Ecosystem Builder Grant ($20,000)**
+**The Decentralized Autonomous Agent Marketplace & Sub-Second Execution Runtime for Elysium L2**
 
 [![Foundry Tests](https://img.shields.io/badge/Foundry_Tests-8%2F8_Passed_(256_Fuzz)-10b981?style=for-the-badge&logo=solidity)](contracts/test/NexusAgents.t.sol)
 [![Runtime SDK](https://img.shields.io/badge/@nexus/runtime-TypeScript_v5.6-3178c6?style=for-the-badge&logo=typescript)](runtime/)
@@ -15,7 +15,7 @@
 
 <br/>
 
-[Executive Summary](#executive-summary) · [The Problem](#the-on-chain-ai-agent-trilemma) · [System Architecture](#system-architecture) · [Ascend Playbook](#ascend-token-launch-playbook-20000-grant-alignment) · [Marketplace & Escrow](#the-commercial-agent-marketplace) · [Runtime SDK](#autonomous-runtime-sdk-nexusruntime) · [60-Second Quickstart](#judge-quickstart--verification-under-60-seconds) · [Contracts Matrix](#smart-contracts-matrix) · [Security & Invariants](#formal-invariants--security-guarantees) · [Documentation Portal](#gitbook-documentation-portal-30-chapters)
+[Executive Summary](#executive-summary) · [The Problem](#the-on-chain-ai-agent-trilemma) · [System Architecture](#system-architecture) · [Ascend Playbook](#ascend-token-launch-playbook) · [Marketplace & Escrow](#the-commercial-agent-marketplace) · [Runtime SDK](#autonomous-runtime-sdk-nexusruntime) · [Quickstart & Verification](#quickstart--verification) · [Contracts Matrix](#smart-contracts-matrix) · [Security & Invariants](#formal-invariants--security-guarantees) · [Documentation Portal](#gitbook-documentation-portal-30-chapters)
 
 ---
 
@@ -108,7 +108,7 @@ flowchart TD
 
 ---
 
-## Ascend Token Launch Playbook ($20,000 Grant Alignment)
+## Ascend Token Launch Playbook
 
 The `$NEXUS` native token is engineered from inception to satisfy every requirement of the **Ascend Token Launch Framework**:
 
@@ -131,7 +131,7 @@ In complete alignment with Ascend standards, trading fees generated across the `
 | Net Fee Allocation | Target Asset | Operational Destination & Mathematical Utility |
 | :--- | :--- | :--- |
 | **50% of Net Revenue** | **HYPE** | **40%** Protocol-Owned Staking into `kHYPE`<br/>**30%** Ecosystem-Token Buybacks for HyperCore listing support<br/>**20%** Core Protocol Operations & Security Infrastructure<br/>**10%** Direct Community Staking Yield |
-| **50% of Net Revenue** | **KNTQ** | **60%** Burned permanently at dead address `0xfefefefefefefefefefefefefefefefefefefefe`<br/>**20%** Deposited into `kHYPE` Liquidity Pools<br/>**20%** Ascend Points & Loyalty Distribution |
+| **50% of Net Revenue** | **KNTQ** | **60%** Burned permanently at dead address `0xfefefefefefefefefefefefefefefefefefefefefe`<br/>**20%** Deposited into `kHYPE` Liquidity Pools<br/>**20%** Ascend Points & Loyalty Distribution |
 
 ### 3. HyperCore Spot Graduation Mechanism
 Upon hitting protocol volume milestones and achieving **Ascended Status**, Ascend coordinates the formal spot deployment ceremony:
@@ -191,7 +191,7 @@ Identifies and captures real-time price divergence between **Ascend Hook Pools (
 
 ---
 
-## Judge Quickstart & Verification (Under 60 Seconds)
+## Quickstart & Verification
 
 Follow these step-by-step commands to independently verify the smart contracts, unit tests, and live execution simulation:
 
@@ -237,10 +237,10 @@ npm test
 #### Actual Test Output:
 ```text
 Running @nexus/runtime Unit Tests...
-✔ SentryStrategy symmetric quote test passed
-✔ SentryStrategy inventory skew test passed
-✔ ArbiterStrategy profitable spread detection passed
-✔ ArbiterStrategy tight spread rejection passed
+[PASS] SentryStrategy symmetric quote test passed
+[PASS] SentryStrategy inventory skew test passed
+[PASS] ArbiterStrategy profitable spread detection passed
+[PASS] ArbiterStrategy tight spread rejection passed
 
 All @nexus/runtime unit tests passed successfully! (4/4)
 ```
@@ -301,13 +301,13 @@ npm run test:e2e
 
 Step 1: Ingesting precompile 0x0801 snapshot...
 Step 2: Evaluating cross-venue Arbiter strategy...
-   ✔ Opportunity detected: 638 bps spread | Direction: BUY_ASCEND_SELL_HYPERCORE
-   ✔ Estimated net profit: $50.58 USDC
+   [OK] Opportunity detected: 638 bps spread | Direction: BUY_ASCEND_SELL_HYPERCORE
+   [OK] Estimated net profit: $50.58 USDC
 Step 3: Constructing HyperCore Order Intent...
-   ✔ Intent generated: Nonce #1000 | Price: $2 | Size: 500
+   [OK] Intent generated: Nonce #1000 | Price: $2 | Size: 500
 Step 4: Dispatching via Keeper Relayer Daemon...
-   ✔ Keeper confirmation received: Status = CONFIRMED
-   ✔ HyperCore Tx Hash: 0xdbb2b6646d9385a2cc1a3ecdfdec5fb9d2ff482813b607bcb12807b8e1b2371a
+   [OK] Keeper confirmation received: Status = CONFIRMED
+   [OK] HyperCore Tx Hash: 0xdbb2b6646d9385a2cc1a3ecdfdec5fb9d2ff482813b607bcb12807b8e1b2371a
 
 ===============================================================
    E2E PIPELINE INTEGRATION TEST COMPLETED SUCCESSFULLY!       
@@ -368,7 +368,7 @@ nexus-agents/
 ├── contracts/                       # Foundry Smart Contract Suite (Solidity 0.8.24)
 │   ├── src/
 │   │   ├── NexusAccount.sol         # ERC-6551 Token-Bound Account with trade delegation
-│   │   ├── NexusAccountRegistry.sol   # Deterministic CREATE2 TBA factory
+│   │   ├── NexusAccountRegistry.sol # Deterministic CREATE2 TBA factory
 │   │   ├── NexusAgentRegistry.sol   # ERC-721 Agent Identity & $NEXUS bond staking
 │   │   ├── NexusEscrow.sol          # Task escrows, streaming vaults & 6h circuit breaker
 │   │   ├── interfaces/              # IElysiumCoreWriter, IHyperCoreMarketData, IERC6551
@@ -405,11 +405,11 @@ nexus-agents/
 
 ---
 
-## Submission Details & Metadata
+## Protocol Specifications & System Metadata
 
 * **Project Name**: Nexus Agents (`@nexus/runtime`)
 * **Repository**: [github.com/youngcrypton/nexus-agents](https://github.com/youngcrypton/nexus-agents)
-* **Hackathon Competition**: Ascend Token Launch Framework & Ecosystem Builder Grant ($20,000)
+* **Ecosystem Standard**: Ascend Token Launch Framework (Closed Hook Pools, USDC Quoted)
 * **Target Blockchain**: Elysium L2 (Arbitrum Nitro Orbit, settling to HyperEVM)
 * **Underlying Matching Engine**: HyperCore L1 (Central Limit Orderbook)
 * **Smart Contract Framework**: Foundry (Solidity 0.8.24)

@@ -22,7 +22,7 @@ graph LR
 
 ## Core Pillars
 
-| 🤖 Agent Marketplace | ⚡ Sub-Second Reflexes | 💎 Ascend Launch Standard | 🛡️ Non-Custodial Safety |
+| Agent Marketplace | Sub-Second Reflexes | Ascend Launch Standard | Non-Custodial Safety |
 | :--- | :--- | :--- | :--- |
 | **Open Coordination**<br/>Discover, hire, and lease specialized AI agents with milestone-based escrows and streaming payments. | **Arbitrum Nitro Orbit**<br/>100–200 ms canonical blocks with zero-gas ~70ms orderbook reads via native precompiles. | **Zero Pre-Sales**<br/>Fair launch via Ascend Closed Hook Pools (USDC quoted) graduating to HyperCore Spot CLOB. | **Cryptographic Isolation**<br/>ERC-6551 smart accounts with trade-only delegation; runtime keys can never withdraw funds. |
 

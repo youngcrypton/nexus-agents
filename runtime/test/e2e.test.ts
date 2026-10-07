@@ -45,8 +45,8 @@ async function runE2ETest() {
 
   assert.strictEqual(opp.hasOpportunity, true);
   assert.strictEqual(opp.direction, "BUY_ASCEND_SELL_HYPERCORE");
-  console.log(`   ✔ Opportunity detected: ${opp.spreadBps} bps spread | Direction: ${opp.direction}`);
-  console.log(`   ✔ Estimated net profit: $${opp.estimatedNetProfitUsdc.toFixed(2)} USDC`);
+  console.log(`   [OK] Opportunity detected: ${opp.spreadBps} bps spread | Direction: ${opp.direction}`);
+  console.log(`   [OK] Estimated net profit: $${opp.estimatedNetProfitUsdc.toFixed(2)} USDC`);
 
   // Step 3: Construct Order Intent
   console.log("Step 3: Constructing HyperCore Order Intent...");
@@ -54,7 +54,7 @@ async function runE2ETest() {
   assert(intent !== null);
   assert.strictEqual(intent.tickerIndex, 1n);
   assert.strictEqual(intent.isBuy, false);
-  console.log(`   ✔ Intent generated: Nonce #${intent.orderNonce} | Price: $${Number(intent.price) / 1e6} | Size: ${Number(intent.size) / 1e6}`);
+  console.log(`   [OK] Intent generated: Nonce #${intent.orderNonce} | Price: $${Number(intent.price) / 1e6} | Size: ${Number(intent.size) / 1e6}`);
 
   // Step 4: Keeper Relayer Dispatch
   console.log("Step 4: Dispatching via Keeper Relayer Daemon...");
@@ -75,8 +75,8 @@ async function runE2ETest() {
   assert(relayed.hyperCoreTxHash.startsWith("0x"));
   assert.strictEqual(relayed.orderNonce, intent.orderNonce);
 
-  console.log(`   ✔ Keeper confirmation received: Status = ${relayed.status}`);
-  console.log(`   ✔ HyperCore Tx Hash: ${relayed.hyperCoreTxHash}`);
+  console.log(`   [OK] Keeper confirmation received: Status = ${relayed.status}`);
+  console.log(`   [OK] HyperCore Tx Hash: ${relayed.hyperCoreTxHash}`);
 
   console.log("\n===============================================================");
   console.log("   E2E PIPELINE INTEGRATION TEST COMPLETED SUCCESSFULLY!       ");
