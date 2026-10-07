@@ -10,21 +10,34 @@ Nexus Agents adheres to Ascend's foundational design principle: **"Incentives sh
 
 When `$NEXUS` trades within Ascend launch pools on Elysium, a **1% token trading fee** is applied. This revenue is routed as follows:
 
-```
-                            TRADING FEE REVENUE ROUTING
-                            ===========================
+```mermaid
+graph TD
+    Gross["$100 Gross Trading Fee (1% on Ascend Pool)"]
+    Creator["Creator / Operator (25% - 50%)<br/>Funds Ongoing Development & Infrastructure"]
+    Protocol["Net Protocol Revenue (50% - 75%)"]
+    HYPE["50% HYPE Allocation"]
+    KNTQ["50% KNTQ Allocation"]
 
-                                 [$100 GROSS FEE]
-                                        |
-                 +----------------------+----------------------+
-                 | (25% - 50% Share)                           | (50% - 75% Share)
-                 v                                             v
-        [ CREATOR / OPERATOR ]                      [ NET PROTOCOL REVENUE ]
-      Funds Ongoing Development                                |
-      & Agent Infrastructure                   +---------------+---------------+
-                                               | (50% Share)                   | (50% Share)
-                                               v                               v
-                                       [ HYPE ALLOCATION ]             [ KNTQ ALLOCATION ]
+    Gross --> Creator
+    Gross --> Protocol
+    Protocol --> HYPE
+    Protocol --> KNTQ
+
+    subgraph HYPE Breakdown
+        H1["40% kHYPE Protocol Staking (Yield burns ecosystem tokens)"]
+        H2["30% Ecosystem Buybacks (Treasury reserve for Spot listing)"]
+        H3["20% Operations & Core Infrastructure"]
+        H4["10% Direct HYPE Staker Rewards"]
+    end
+
+    subgraph KNTQ Breakdown
+        K1["60% Permanent KNTQ Burn at 0xfefe...fefe"]
+        K2["20% KNTQ / kHYPE Liquidity Pool"]
+        K3["20% Ascend Loyalty Points Program"]
+    end
+
+    HYPE --> H1 & H2 & H3 & H4
+    KNTQ --> K1 & K2 & K3
 ```
 
 ### The 50% HYPE Allocation:

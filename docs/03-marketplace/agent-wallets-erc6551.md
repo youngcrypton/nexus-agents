@@ -10,25 +10,12 @@ A fundamental innovation of Nexus Agents is the decoupling of agent execution fr
 
 When a creator registers an agent in `NexusAgentRegistry.sol`, the factory mints a unique **Agent Identity NFT (ERC-721)** and derives a deterministic smart account address:
 
-```
-                            ERC-6551 AGENT ARCHITECTURE
-                            ===========================
+```mermaid
+graph TD
+    NFT["Agent Identity NFT (ERC-721)<br/>- Represents ownership of the Agent<br/>- Tradable, leasable, and collateralizable"]
+    TBA["Agent Smart Account (ERC-6551 TBA)<br/>- Holds capital (USDC, native HYPE)<br/>- Receives client hiring fees & rewards<br/>- Pays gas for Elysium execution<br/>- Authorizes Trade-Only Session Key on HyperCore"]
 
-       +---------------------------------------------------------------+
-       |                      AGENT IDENTITY NFT                       |
-       |  - Represents ownership of the Agent                          |
-       |  - Tradable, leasable, and collateralizable                   |
-       +-------------------------------+-------------------------------+
-                                       |
-                     CREATE2 Derivation (Deterministic)
-                                       v
-       +---------------------------------------------------------------+
-       |                   AGENT SMART ACCOUNT (TBA)                   |
-       |  - Holds its own balance (USDC, native HYPE)                  |
-       |  - Receives client hiring fees & performance rewards          |
-       |  - Pays its own gas for Elysium execution                     |
-       |  - Authorizes Trade-Only Agent Key on HyperCore               |
-       +---------------------------------------------------------------+
+    NFT -->|CREATE2 Deterministic Derivation| TBA
 ```
 
 ---

@@ -10,23 +10,14 @@ When tokens launch via the Ascend Launch Framework, liquidity is initially conce
 
 The Arbiter continuously monitors both venues and executes atomic two-leg trades whenever the price disparity exceeds the total round-trip transaction costs.
 
-```
-                  +----------------------------------------------+
-                  |         HyperCore Spot Orderbook (0x0801)    |
-                  |                Mid Price = $2.00             |
-                  +----------------------+-----------------------+
-                                         |
-                                Spread = 5.26%
-                                         |
-                  +----------------------v-----------------------+
-                  |        Ascend Closed Hook Pool (AMM)         |
-                  |               Spot Price = $1.88             |
-                  +----------------------------------------------+
-                                         |
-                           Arbiter Execution Signal:
-                 1. Buy base tokens on Ascend AMM at $1.88
-                 2. Sell base tokens on HyperCore CLOB at $2.00
-                 3. Net Profit = Gross Profit - 1% AMM Fee - L2 Gas
+```mermaid
+graph TD
+    HC["HyperCore Spot Orderbook (0x0801)<br/>Mid Price: $2.00"]
+    AMM["Ascend Closed Hook Pool (AMM)<br/>Spot Price: $1.88"]
+    Signal["Arbiter Execution Signal<br/>1. Buy base tokens on Ascend AMM at $1.88<br/>2. Sell base tokens on HyperCore CLOB at $2.00<br/>3. Net Profit = Gross Profit - 1% AMM Fee - L2 Gas"]
+
+    HC <-->|Spread: 6.38%| AMM
+    AMM --> Signal
 ```
 
 ---

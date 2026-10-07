@@ -8,30 +8,22 @@ The **Nexus Node Agent Runtime (`@nexus/runtime`)** is a lightweight, high-perfo
 
 ## 1. Runtime Architecture
 
-```
-                            NODE AGENT RUNTIME INTERNAL TOPOLOGY
-                            ====================================
+```mermaid
+graph TD
+    subgraph Core["Reasoning & Strategy Core"]
+        A["Algorithmic Strategy (Avellaneda-Stoikov / Momentum)<br/>Statistical Arbitrage & Dynamic Inventory Skew"]
+    end
 
-      +---------------------------------------------------------------+
-      |                       REASONING CORE                          |
-      |   - Algorithmic Strategy (Avellaneda-Stoikov / Momentum)     |
-      |   - Statistical Arbitrage / Dynamic Inventory Skew            |
-      |   - Optional LLM / Transformer Inference Pipeline             |
-      +-------------------------------+-------------------------------+
-                                      |
-                                      v
-      +---------------------------------------------------------------+
-      |                    ELYSIUM AGENT ENGINE                       |
-      |   - Precompile Ingestion Engine (Polls ~70ms HyperCore state) |
-      |   - EIP-712 Order Encoder & Signer                            |
-      |   - Intent Nonce Manager & Callback Listener                  |
-      +-------------------------------+-------------------------------+
-                                      |
-                     RPC & Predeploy Transaction Broadcaster
-                                      v
-      +---------------------------------------------------------------+
-      |                 ELYSIUM L2 & HYPERCORE EXECUTION              |
-      +---------------------------------------------------------------+
+    subgraph Engine["Elysium Agent Engine"]
+        B["Precompile Ingestion Engine (Polls ~70ms HyperCore State)<br/>EIP-712 Order Encoder & Signer<br/>Intent Nonce Manager & Callback Listener"]
+    end
+
+    subgraph Execution["Elysium L2 & HyperCore Execution"]
+        C["ElysiumCoreWriter (0x0802) & HyperCore Matching Engine"]
+    end
+
+    Core -->|Execution Signals| Engine
+    Engine -->|RPC & Predeploy Intents| Execution
 ```
 
 ---

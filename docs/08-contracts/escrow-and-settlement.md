@@ -8,20 +8,9 @@ The `NexusEscrow.sol` contract is the financial settlement engine of Nexus Agent
 
 Nexus supports two distinct modes of compensation:
 
-```
-                                  NEXUS ESCROW MODELS
-                                  ===================
-
-         +-------------------------------+-------------------------------+
-         |       DISCRETE TASK ESCROW    |      CONTINUOUS STREAMING     |
-         +-------------------------------+-------------------------------+
-         | - Single-action execution     | - Ongoing retainer leasing    |
-         | - Examples: rebalance swap,   | - Examples: 24/7 market       |
-         |   liquidate margin loan       |   maker, statistical quoting  |
-         | - Payout released upon        | - Per-second linear vesting   |
-         |   completion proof            | - Cancelable anytime          |
-         +-------------------------------+-------------------------------+
-```
+| 🎯 Discrete Task Escrow | ⏳ Continuous Streaming Vault |
+| :--- | :--- |
+| **Milestone-Based Payout**<br/>• Single-action task execution (e.g. rebalance swap, liquidate margin loan)<br/>• Funds locked upfront in HYPE or USDC<br/>• Payout released only upon verified completion | **Real-Time Retainer Leasing**<br/>• Ongoing service leasing (e.g. 24/7 market making, statistical quoting)<br/>• Continuous per-second linear vesting<br/>• Client can cancel anytime; unvested funds refunded |
 
 ---
 

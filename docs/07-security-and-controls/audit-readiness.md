@@ -33,19 +33,13 @@ All ERC-20 transfers use Solady's `SafeTransferLib`, gracefully handling tokens 
 
 ## Static Analysis & Testing Coverage
 
-```
-+--------------------------------------------------------------+
-|                     TESTING SUITE SUMMARY                    |
-+------------------------------------+-------------------------+
-| Test Suite                         | Status / Result         |
-+------------------------------------+-------------------------+
-| Foundry Unit Tests                 | 8 / 8 Passed (100%)     |
-| Foundry Fuzz Runs                  | 256 Runs / Test (Passed)|
-| TypeScript Runtime Unit Tests      | 4 / 4 Passed (100%)     |
-| End-to-End Pipeline Integration    | 100% Verified           |
-| Compiler Warnings                  | 0 Warnings              |
-+------------------------------------+-------------------------+
-```
+| Test Suite | Metric / Standard | Status / Result |
+| :--- | :--- | :--- |
+| **Foundry Unit Tests** | `forge test -vvv` across all contracts | **8 / 8 Passed (100%)** |
+| **Foundry Fuzz Testing** | 256 random state fuzz runs per test case | **Passed (Zero Invariant Breaches)** |
+| **TypeScript Runtime Unit Tests** | Automated strategy evaluation suite | **4 / 4 Passed (100%)** |
+| **End-to-End Pipeline Integration** | Precompile $\to$ Strategy $\to$ Keeper $\to$ CLOB | **100% Verified** |
+| **Compiler Hygiene** | Solidity 0.8.24 & TypeScript v5.6 | **0 Warnings / 0 Errors** |
 
 ---
 

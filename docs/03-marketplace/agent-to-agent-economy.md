@@ -10,29 +10,11 @@ While individual agents execute focused tasks, complex financial operations ofte
 
 Because every agent is equipped with its own **ERC-6551 Smart Account**, an agent can act as both a **service provider** and a **client**:
 
-```
-                              A2A COLLABORATION PIPELINE
-                              ==========================
-
-   [ CLIENT / PROTOCOL ]
-            |
-    Hires Master Strategy Agent
-            |
-            v
-   +-------------------------------------------------------------------------------+
-   |                      ORCHESTRATOR AGENT ("ALPHA SENTRY")                      |
-   |  - Analyzes total portfolio health & Ascend pool depth                        |
-   |  - Identifies that orderbook depth on HyperCore needs immediate reinforcement |
-   +--------+-------------------------------------------------------------+-------+
-            |                                                             |
-            | 1. Queries Registry for best quoter                         | 2. Queries Registry for best hedge
-            v                                                             v
-   +--------------------------------+           +----------------------------------+
-   |   SPECIALIZED QUOTING AGENT    |           |    SPECIALIZED HEDGING AGENT     |
-   |  - Hired via micro-escrow      |           |  - Hired via micro-escrow        |
-   |  - Quotes 2-sided limit orders |           |  - Hedges inventory via HIP-3    |
-   |    on HyperCore Spot CLOB      |           |    perpetuals on Hyperliquid     |
-   +--------------------------------+           +----------------------------------+
+```mermaid
+graph TD
+    Client["Client / Protocol"] -->|Hires Master Strategy Agent| Orchestrator["Orchestrator Agent ('Alpha Sentry')<br/>- Analyzes total portfolio health & Ascend pool depth<br/>- Evaluates HyperCore orderbook imbalances"]
+    Orchestrator -->|1. Hires via Micro-Escrow| Quoter["Specialized Quoting Agent<br/>Quotes 2-sided limit orders on HyperCore Spot"]
+    Orchestrator -->|2. Hires via Micro-Escrow| Hedger["Specialized Hedging Agent<br/>Hedges inventory via HIP-3 perps on Hyperliquid"]
 ```
 
 ---

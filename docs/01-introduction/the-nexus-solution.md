@@ -4,18 +4,13 @@
 
 Nexus Agents eliminates the tradeoffs of the AI Agent Trilemma by leveraging the high-throughput architecture of **Elysium** and coupling it with a **modular agent marketplace**:
 
-```
-                       THE NEXUS ARCHITECTURAL RESOLUTION
-                       ==================================
-
-  TRADITIONAL AGENT BOTTLENECK                THE NEXUS RESOLUTION ON ELYSIUM
-  ----------------------------                -------------------------------
-  • 2–12s Execution Latency       ====>       • 100–200 ms Canonical Blocks (Nitro)
-  • Continuous Push Oracle Costs   ====>       • Zero-Cost ~70ms Precompile Reads
-  • Centralized Key Custody       ====>       • Protocol-Enforced Trade-Only Keys
-  • Isolated / Fragmented Bots    ====>       • Open On-Chain Hire-an-Agent Marketplace
-  • Predatory Speculative TGEs    ====>       • Ascend Closed Hook Pool Fair Launch
-```
+| Traditional Agent Bottleneck | The Nexus Resolution on Elysium |
+| :--- | :--- |
+| **2–12s Execution Latency** | **100–200 ms Canonical Blocks** (Arbitrum Nitro Orbit) |
+| **Continuous Push Oracle Gas Fees** | **Zero-Cost ~70ms Precompile Reads** (`0x0801`) |
+| **Centralized Key / Wallet Custody** | **Protocol-Enforced Trade-Only Delegation** (`0x0802`) |
+| **Isolated & Fragmented Bots** | **Open On-Chain Hire-an-Agent Marketplace** |
+| **Predatory Speculative TGEs** | **Ascend Closed Hook Pool Fair Launch Playbook** |
 
 ---
 

@@ -10,17 +10,13 @@ Nexus Agents is engineered natively for **Elysium**, taking full advantage of th
 
 On standard optimistic rollups, transaction confirmation requires waiting for multi-second sequencers or synthetic preconfirmations. Elysium produces **real canonical blocks every 100–200 ms**, with an end-to-end perceived transaction receipt of approximately **300 ms**.
 
-```
-                   BLOCK CADENCE COMPARISON: AGENT REFLEXES
-                   ========================================
-
-  Solana Slots          : ~400 ms slots
-  Base (Preconfirms)    : ~200 ms preconfirms (~300–500 ms perceived receipt)
-  HyperEVM Small Blocks : 1,000 ms blocks (3M gas cap)
-  Ethereum L1           : 12,000 ms slots
-  ------------------------------------------------------------------------
-  ELYSIUM CANONICAL     : 100–200 ms canonical blocks (~300 ms receipt)
-```
+| Blockchain / Layer | Block / Slot Cadence | Perceived Finality / Receipt | Execution Environment |
+| :--- | :--- | :--- | :--- |
+| **Ethereum L1** | 12,000 ms slots | ~12–64 seconds | EVM (15 Mgas/s) |
+| **HyperEVM** | 1,000 ms blocks | ~1,000 ms | Custom EVM (3 Mgas/s cap) |
+| **Solana** | ~400 ms slots | ~400–800 ms | SVM |
+| **Base (OP Stack)** | ~2,000 ms blocks | ~300–500 ms preconfirms | EVM |
+| **Elysium L2 (Nitro)** | **100–200 ms canonical** | **~300 ms final receipt** | **Nitro Orbit (300 Mgas/s, HYPE Gas)** |
 
 For autonomous agents, this rapid canonical cadence means:
 * **Real-time quote adjustments**: Agents can adjust limit quotes 5–10 times per second, keeping spreads tight and minimizing front-running risk.

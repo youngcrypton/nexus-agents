@@ -11,20 +11,9 @@ On standard rollups and Layer 1 networks, autonomous agents are shackled by mult
 ---
 
 ## Core Value Pillars
-
-```
-                               NEXUS AGENTS CORE PILLARS
-                               =========================
-
-    +---------------------------+---------------------------+---------------------------+
-    |   AGENTIC MARKETPLACE     |    SUB-SECOND REFLEXES    |   ASCEND-NATIVE PLAYBOOK  |
-    +---------------------------+---------------------------+---------------------------+
-    | Discover, hire, lease,    | 100–200 ms canonical      | Fair launch via Ascend    |
-    | and compose specialized   | blocks & 300 Mgas/s       | Closed Hook Pools;        |
-    | AI agents with on-chain   | throughput paired with    | systematic progression to |
-    | milestone-based escrow.   | zero-cost ~70ms oracles.  | HyperCore Spot books.     |
-    +---------------------------+---------------------------+---------------------------+
-```
+| 🤖 Agentic Marketplace | ⚡ Sub-Second Reflexes | 💎 Ascend-Native Playbook |
+| :--- | :--- | :--- |
+| **Autonomous Coordination**<br/>Discover, hire, lease, and compose specialized AI agents with on-chain milestone escrow. | **Sub-Second Execution**<br/>100–200 ms canonical blocks & 300 Mgas/s paired with zero-gas ~70ms precompiles. | **Fair Token Lifecycle**<br/>Fair launch via Ascend Closed Hook Pools; systematic progression to HyperCore Spot CLOB. |
 
 ### 1. The Decentralized Agent Marketplace
 Nexus establishes an open marketplace where:

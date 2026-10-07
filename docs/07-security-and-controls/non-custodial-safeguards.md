@@ -10,28 +10,10 @@ Nexus Agents enforces a non-negotiable security invariant: **neither the protoco
 
 All interactions with HyperCore leverage Hyperliquid's native agent authorization model:
 
-```
-                          CUSTODY DELEGATION BOUNDARIES
-                          =============================
-
-    [ USER / CLIENT CAPITAL ]
-               |
-               v
-    +---------------------------------------------------------------+
-    |                   HYPERCORE MASTER ACCOUNT                    |
-    |  - Owns all funds, balances, and position margins             |
-    |  - Has exclusive withdrawal & transfer authority              |
-    +-------------------------------+-------------------------------+
-                                    |
-                     Authorizes EIP-712 Trade-Only Agent
-                                    v
-    +---------------------------------------------------------------+
-    |                      TRADE-ONLY AGENT KEY                     |
-    |  - Can ONLY execute limit orders and cancel orders            |
-    |  - CANNOT transfer funds to third-party addresses             |
-    |  - CANNOT withdraw funds from the exchange                    |
-    |  - Revocable by Master Account at ANY time with 1 transaction |
-    +---------------------------------------------------------------+
+```mermaid
+graph TD
+    Client["User / Client Capital"] -->|Deposits & Holds Margin| Master["HyperCore Master Account<br/>- Owns all funds, balances, and position margins<br/>- Retains exclusive withdrawal & transfer authority"]
+    Master -->|Authorizes via EIP-712| Session["Trade-Only Agent Key<br/>- Can ONLY execute limit orders and cancel orders<br/>- CANNOT transfer funds to third-party addresses<br/>- CANNOT withdraw funds from the exchange<br/>- Revocable by Master Account at ANY time with 1 tx"]
 ```
 
 ### Protocol-Enforced Invariants:

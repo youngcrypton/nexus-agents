@@ -4,15 +4,13 @@
 
 Nexus Agents rejects external launchpads, private VC allocations, and predatory initial DEX offerings. The `$NEXUS` token conducts its public launch **strictly in accordance with Ascend’s documented lifecycle**:
 
-```
-                         THE ASCEND TOKEN LIFECYCLE
-                         ==========================
+```mermaid
+graph LR
+    Stage1["1. Launch Stage<br/>Closed Hook Pool<br/>(USDC Quote Asset)"]
+    Stage2["2. Ascended Status<br/>Volume & Holders Verified<br/>Ascend Treasury Buybacks"]
+    Stage3["3. HyperCore Spot<br/>Deposit Wallet to 0x20||tokenIndex<br/>Official CLOB Listing"]
 
-  +----------------------+      +----------------------+      +----------------------+
-  |  1. LAUNCH STAGE     |      | 2. ASCENDED STATUS   |      | 3. HYPERCORE SPOT    |
-  | Closed Hook Pool     | ===> | Volume & Holders     | ===> | Link Deposit Wallet  |
-  | (USDC Quote Asset)   |      | Ascend Buybacks      |      | to 0x20||tokenIndex  |
-  +----------------------+      +----------------------+      +----------------------+
+    Stage1 --> Stage2 --> Stage3
 ```
 
 ---

@@ -4,45 +4,14 @@
 
 Following the completion of the core V1 software architecture, Nexus Agents follows a phased post-build roadmap synchronized with **Elysium’s network rollout** and **Ascend’s launch schedule**:
 
-```
-========================================================================================
-                          NEXUS AGENTS: POST-BUILD MILESTONES
-========================================================================================
-
-  EPOCH 1: TESTNET IGNITION & SECURITY HARDENING
-  -----------------------------------------------
-  • Verified Contracts deployed on Elysium Testnet (99801) & HyperEVM Testnet (998)
-  • "Genesis 50" Seed Agent Cohort onboarded (Quoters, Arbitrageurs, Rebalancers)
-  • Stress test: 10,000 automated hiring tasks executed with zero dropped intents
-  • Comprehensive third-party security audit completed
-
-  EPOCH 2: MAINNET DAY 1 CO-LAUNCH WITH ASCEND (Stock ArbOS)
-  -----------------------------------------------------------
-  • Production contracts deployed on Elysium Mainnet on Day 1
-  • $NEXUS Token launched strictly via Ascend Closed Hook Pool (USDC quote)
-  • Marketplace opened for commercial agent hiring
-  • KPI Target: $500,000+ cumulative escrow volume in first 14 days
-
-  EPOCH 3: WEEK 4 UPGRADE — THE HYPERCORE ACTIVATION
-  ---------------------------------------------------
-  • Precompile Integration: Agents connect to live ~70ms HyperCore orderbooks
-  • ElysiumCoreWriter Integration: Agents place non-custodial limit orders
-  • Launch of "Arbiter Swarm" (Cross-venue Ascend <-> HyperCore arbitrage)
-  • Achievement of "Ascended Status" on Ascend
-
-  EPOCH 4: HYPERCORE SPOT GRADUATION & A2A SWARMS (Months 2-3)
-  -------------------------------------------------------------
-  • HyperCore Spot Listing Ceremony finalized (Deposit wallet linked)
-  • Agent-to-Agent (A2A) Autonomous Hiring contracts activated
-  • Decentralized Solver & Keeper Mesh v1 live with community staking
-  • KPI Target: 250+ active registered agents; $3,000,000+ escrow volume
-
-  EPOCH 5: TEE RUNTIMES & HIP-3 PERPETUALS (Months 4-6)
-  ------------------------------------------------------
-  • Hardware TEE (Intel SGX) integration for proprietary agent weights
-  • HIP-3 Builder Perpetual Market listing on Hyperliquid
-  • No-Code "Agent Studio" launched for public creators
-========================================================================================
+```mermaid
+timeline
+    title Nexus Agents Strategic Post-Build Roadmap
+    Epoch 1 (Testnet Ignition) : Verified contracts on Elysium (99801) : Genesis 50 Seed Agent Cohort : 10,000 automated stress tasks : Formal security audit
+    Epoch 2 (Mainnet Co-Launch) : Production Day 1 on Elysium : $NEXUS fair launch via Ascend Closed Hook Pool : Marketplace open for commercial hiring : $500K+ initial escrow volume
+    Epoch 3 (HyperCore Activation) : Precompile 0x0801 live : CoreWriter 0x0802 active : Arbiter cross-venue arbitrage : Ascended Status qualified
+    Epoch 4 (Spot Graduation & A2A) : HyperCore Spot CLOB listing : A2A Autonomous hiring mesh : Decentralized keeper staking : $3M+ escrow volume
+    Epoch 5 (TEE & HIP-3 Perps) : Intel SGX TEE runtimes : HIP-3 builder perps on Hyperliquid : No-code Agent Studio
 ```
 
 ---

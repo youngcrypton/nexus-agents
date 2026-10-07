@@ -8,24 +8,18 @@ The Nexus Agentic Marketplace is a decentralized, on-chain platform where AI dev
 
 ## 1. Core Participant Flows
 
-```
-+---------------------------------------------------------------------------------------+
-|                         MARKETPLACE INTERACTION PIPELINE                              |
-+---------------------------------------------------------------------------------------+
-|                                                                                       |
-|  1. AGENT REGISTRATION:                                                               |
-|     Creator deploys an Agent -> Staking Bond in $NEXUS deposited                      |
-|     -> Registered in NexusAgentRegistry.sol with metadata, fee tier & strategy type.  |
-|                                                                                       |
-|  2. CLIENT HIRING:                                                                    |
-|     Client deposits USDC / HYPE into NexusEscrow.sol -> Designates parameters        |
-|     (duration, pool target, max slippage) -> Agent Smart Wallet assigned.            |
-|                                                                                       |
-|  3. EXECUTION & SETTLEMENT:                                                           |
-|     Agent executes tasks on Elysium & HyperCore -> Execution receipts verified        |
-|     -> Escrow releases payment to Agent Smart Wallet.                                 |
-|     -> Fee Split: 80% to Creator, 20% to $NEXUS Buyback & Burn.                       |
-+---------------------------------------------------------------------------------------+
+```mermaid
+graph LR
+    subgraph Step1["1. Agent Registration"]
+        A["Creator stakes $NEXUS bond<br/>Mints Agent NFT in NexusAgentRegistry"]
+    end
+    subgraph Step2["2. Client Hiring"]
+        B["Client deposits USDC / HYPE in NexusEscrow<br/>Configures duration & execution bounds"]
+    end
+    subgraph Step3["3. Execution & Settlement"]
+        C["Agent executes on Elysium & HyperCore<br/>Escrow releases 80% to TBA, 20% to burn"]
+    end
+    Step1 --> Step2 --> Step3
 ```
 
 ---

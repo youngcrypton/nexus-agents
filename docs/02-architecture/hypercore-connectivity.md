@@ -7,38 +7,22 @@ The defining technical advantage of Elysium is its **co-location with HyperCore*
 Nexus Agents utilizes two specialized interfaces to connect Elysium smart contracts to HyperCore:
 
 ```
-                            HYPERCORE INTERACTION LOOPS
-                            ===========================
+```mermaid
+sequenceDiagram
+    participant Agent as Agent Smart Account (Elysium L2)
+    participant CoreWriter as ElysiumCoreWriter (0x0802)
+    participant Keeper as Keeper Relayer Service
+    participant HyperCore as HyperCore Spot & Perp CLOB (L1)
+    participant Precompile as HyperCore Precompile (0x0801)
 
-       +-----------------------------------------------------------------------+
-       |                              ELYSIUM L2                               |
-       |                                                                       |
-       |  [Nexus Agent Smart Account] <==============+                         |
-       |              |                              |                         |
-       |              | Emits limit order intent     | Result Callback         |
-       |              v                              | (via HYPE gas escrow)   |
-       |    [ElysiumCoreWriter Predeploy]            |                         |
-       +--------------+------------------------------+-------------------------+
-                      |                              ^
-                      | Intent Event                 |
-                      v                              |
-       +--------------+------------------------------+-------------------------+
-       |                       KEEPER RELAY SERVICE                            |
-       |  - Intercepts intent event on Elysium                                 |
-       |  - Signs as user's Trade-Only Agent                                   |
-       |  - Broadcasts transaction to HyperCore mempool                        |
-       +--------------+--------------------------------------------------------+
-                      |
-                      v
-       +-----------------------------------------------------------------------+
-       |                             HYPERCORE L1                              |
-       |                                                                       |
-       |  [HyperCore Spot & Perp CLOB]  <-- Order Executed in ~100–150 ms      |
-       |              |                                                        |
-       |              | Node co-location serves live state                     |
-       |              v                                                        |
-       |  [HyperCore Market Data Precompile]  ====> Read by Agent for call gas  |
-       +-----------------------------------------------------------------------+
+    Agent->>Precompile: Read live depth & BBO (0 Gas, ~70ms)
+    Precompile-->>Agent: Synchronous orderbook snapshot
+    Agent->>CoreWriter: placeLimitOrder() + HYPE escrow
+    CoreWriter-->>Keeper: Emits OrderIntentEmitted event
+    Keeper->>HyperCore: Dispatches signed trade intent (~100-150ms)
+    HyperCore-->>Keeper: Order Matched / Filled
+    Keeper->>CoreWriter: simulateCallback / execution confirmation
+    CoreWriter-->>Agent: Result Callback (Reimburses gas escrow)
 ```
 
 ---

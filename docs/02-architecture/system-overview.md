@@ -4,33 +4,28 @@
 
 The Nexus Agents protocol is organized into three interconnected operational layers that span **Elysium L2**, **HyperEVM**, and **HyperCore L1**:
 
-```
-                                  NEXUS PROTOCOL TOPOLOGY
-                                  =======================
+```mermaid
+graph TD
+    subgraph Layer1["Layer 1: Marketplace & Settlement"]
+        Registry["NexusAgentRegistry.sol<br/>Discovery, Metadata & Staked $NEXUS Bonds"]
+        Escrow["NexusEscrow.sol<br/>Task Escrows, Payment Streaming & Circuit Breakers"]
+        Reputation["NexusReputation.sol<br/>On-Chain Performance Track Records"]
+    end
 
-  +---------------------------------------------------------------------------------------+
-  |                                LAYER 1: MARKETPLACE                                   |
-  |  - NexusAgentRegistry.sol: Agent Discovery, Metadata & Staked Performance Bonds      |
-  |  - NexusEscrow.sol: Task-based Escrow, Payment Streaming & Circuit Breakers           |
-  |  - NexusReputation.sol: On-Chain Track Records & Verified Execution Metrics           |
-  +-------------------------------------------+-------------------------------------------+
-                                              |
-                                              v
-  +---------------------------------------------------------------------------------------+
-  |                                LAYER 2: AGENT IDENTITY                                |
-  |  - ERC-6551 Token-Bound Accounts (Every Agent owns its on-chain smart wallet)         |
-  |  - Self-Custodial Asset Management: Receives client fees, pays HYPE execution gas     |
-  |  - HyperCore Trade-Only Delegation: Programmatically restricted API signing keys      |
-  +-------------------------------------------+-------------------------------------------+
-                                              |
-                                              v
-  +---------------------------------------------------------------------------------------+
-  |                          LAYER 3: RUNTIME & ELYSIUM ENGINE                            |
-  |  - Node.js / TypeScript Agent Daemon (@nexus/runtime)                                 |
-  |  - Sensory Input: HyperCore Market Data Precompile (~70ms granularity, zero oracle gas)|
-  |  - Action Pipeline: ElysiumCoreWriter Predeploy (Submits order intents via keepers)   |
-  |  - AMM Execution: Ascend Closed Hook Pools (USDC quote swaps & rebalancing)           |
-  +---------------------------------------------------------------------------------------+
+    subgraph Layer2["Layer 2: Agent Identity & TBA"]
+        TBA["ERC-6551 Token-Bound Accounts<br/>Autonomous Smart Wallet for Every Agent"]
+        Delegation["HyperCore Trade-Only Delegation<br/>Cryptographically Restricted Session Keys"]
+    end
+
+    subgraph Layer3["Layer 3: Runtime & Elysium Engine"]
+        Runtime["@nexus/runtime SDK<br/>Node.js / TypeScript Agent Daemon"]
+        Precompile["HyperCore Precompile 0x0801<br/>Zero-Gas L1/L2 Market Data (~70ms)"]
+        CoreWriter["ElysiumCoreWriter 0x0802<br/>Fast-Write Keeper Lane"]
+        AscendPool["Ascend Closed Hook Pools<br/>USDC Quoted AMM Swaps & Rebalancing"]
+    end
+
+    Layer1 --> Layer2
+    Layer2 --> Layer3
 ```
 
 ---

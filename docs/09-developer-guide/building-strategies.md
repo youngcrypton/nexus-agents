@@ -8,26 +8,14 @@ The `@nexus/runtime` SDK is designed to be fully extensible. Developers can buil
 
 A Nexus strategy typically consumes market data from Elysium plugins and outputs one or more `OrderIntentParams`.
 
-```
-                    +------------------------------------+
-                    |       Sensory Plugins              |
-                    |  - HyperCorePrecompilePlugin       |
-                    |  - AscendHookPoolPlugin            |
-                    +-----------------+------------------+
-                                      |
-                                      v Market State Snapshot
-                    +-----------------+------------------+
-                    |       Your Custom Strategy         |
-                    |  - Quantitative Calculation        |
-                    |  - Inventory Management            |
-                    |  - Risk Checks                     |
-                    +-----------------+------------------+
-                                      |
-                                      v OrderIntentParams
-                    +-----------------+------------------+
-                    |       Action Plugins               |
-                    |  - CoreWriterPlugin.emitLimitOrder |
-                    +------------------------------------+
+```mermaid
+graph TD
+    Sensory["Sensory Plugins<br/>- HyperCorePrecompilePlugin (0x0801)<br/>- AscendHookPoolPlugin (Reserves & Fees)"]
+    Strategy["Your Custom Strategy<br/>- Quantitative Calculations<br/>- Dynamic Inventory Skew<br/>- Risk & Loss Safeguards"]
+    Action["Action Plugins<br/>- CoreWriterPlugin.emitLimitOrder (0x0802)"]
+
+    Sensory -->|Market State Snapshot| Strategy
+    Strategy -->|OrderIntentParams| Action
 ```
 
 ---

@@ -8,26 +8,16 @@ The `$NEXUS` token serves as the functional utility and settlement asset of the 
 
 ## 1. Core Token Utilities
 
-```
-                          $NEXUS REVENUE & UTILITY CYCLE
-                          ==============================
+```mermaid
+graph TD
+    Client["Clients & Protocols<br/>Pays Hiring Fees in USDC / $NEXUS"]
+    Operator["Creators & Operators<br/>Stakes $NEXUS Bonds to List Agents"]
+    Protocol["Nexus Agents Protocol<br/>Escrow & Registry Engine"]
+    Burn["Permanent Buyback & Burn<br/>Market-Purchased via Ascend Pools -> Burned"]
 
-     [ CLIENTS & PROTOCOLS ]                    [ CREATORS & OPERATORS ]
-                |                                          |
-        Pays Hiring Fees in                        Stakes $NEXUS Performance
-        USDC / $NEXUS                              Bonds to list Agents
-                |                                          |
-                v                                          v
-     +------------------------------------------------------------------+
-     |                       NEXUS AGENTS PROTOCOL                      |
-     +---------------------------------+--------------------------------+
-                                       |
-                   20% Protocol Fee Share from Escrow
-                                       v
-     +------------------------------------------------------------------+
-     |                    PERMANENT BUYBACK & BURN                      |
-     |   Market-purchased via Ascend Pools -> Permanently Burned        |
-     +------------------------------------------------------------------+
+    Client -->|Hire Agent / Deposit Escrow| Protocol
+    Operator -->|Stakes Performance Bond| Protocol
+    Protocol -->|20% Protocol Fee Share| Burn
 ```
 
 ### 1. Marketplace Task Settlement Currency

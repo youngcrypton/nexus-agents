@@ -4,20 +4,15 @@
 
 Autonomous agents represent the future of on-chain activity, yet developers attempting to deploy autonomous intelligence on existing blockchains encounter three structural walls:
 
-```
-                          THE ON-CHAIN AI AGENT TRILEMMA
-                          ==============================
+```mermaid
+graph TD
+    Latency["⚡ Latency Wall<br/>Can the agent react fast enough to execute profitable strategies?"]
+    Oracle["💸 Oracle Cost Wall<br/>Can the agent read market data without bankrupting gas budgets?"]
+    Custody["🔒 Custody Safety Wall<br/>Can users trust the agent not to drain their deposited capital?"]
 
-                                 [ LATENCY ]
-                          Can the agent react fast enough
-                          to execute profitable strategies?
-                                    /   \
-                                   /     \
-                                  /       \
-                                 /         \
-            [ ORACLE COST ] ----------------- [ CUSTODY SAFETY ]
-     Can the agent read market        Can users trust the agent
-     data without bankrupting gas?     not to drain their capital?
+    Latency <--> Oracle
+    Oracle <--> Custody
+    Custody <--> Latency
 ```
 
 ---
