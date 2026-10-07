@@ -1,7 +1,7 @@
 # Summary
 
 ## 🚀 Getting Started
-* [Protocol Overview](README.md)
+* [Protocol Overview](docs/01-introduction/overview.md)
 * [Executive Summary](docs/01-introduction/executive-summary.md)
 * [The Problem Statement](docs/01-introduction/problem-statement.md)
 * [The Nexus Solution](docs/01-introduction/the-nexus-solution.md)
