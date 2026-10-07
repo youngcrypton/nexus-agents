@@ -27,8 +27,8 @@ graph TD
     Registry -->|2. Compute / Deploy TBA| TBAFactory
     TBAFactory -->|CREATE2 Clone| TBA
     User -->|3. Hire Agent / Fund Escrow| Escrow
-    Escrow -->|4. Release Payout (80%)| TBA
-    Escrow -->|5. Retain Protocol Fee (20%)| Registry
+    Escrow -->|"4. Release Payout (80%)"| TBA
+    Escrow -->|"5. Retain Protocol Fee (20%)"| Registry
     TBA -->|6. StaticCall Market Book| Precompile
     TBA -->|7. Emit Order Intent| CoreWriter
 ```

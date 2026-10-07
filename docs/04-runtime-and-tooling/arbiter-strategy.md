@@ -16,7 +16,7 @@ graph TD
     AMM["Ascend Closed Hook Pool (AMM)<br/>Spot Price: $1.88"]
     Signal["Arbiter Execution Signal<br/>1. Buy base tokens on Ascend AMM at $1.88<br/>2. Sell base tokens on HyperCore CLOB at $2.00<br/>3. Net Profit = Gross Profit - 1% AMM Fee - L2 Gas"]
 
-    HC <-->|Spread: 6.38%| AMM
+    HC <-->|"Spread: 6.38%"| AMM
     AMM --> Signal
 ```
 

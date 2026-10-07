@@ -17,7 +17,7 @@ graph TD
 
     Client -->|Hire Agent / Deposit Escrow| Protocol
     Operator -->|Stakes Performance Bond| Protocol
-    Protocol -->|20% Protocol Fee Share| Burn
+    Protocol -->|"20% Protocol Fee Share"| Burn
 ```
 
 ### 1. Marketplace Task Settlement Currency
