@@ -1,0 +1,30 @@
+{
+  "name": "@nexus/runtime",
+  "version": "1.0.0",
+  "description": "Autonomous Agent Runtime & Elysium Tool Stack for Nexus Agents",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "demo": "tsx src/demo.ts",
+    "test": "tsx test/runtime.test.ts"
+  },
+  "keywords": [
+    "elysium",
+    "hyperliquid",
+    "ai-agents",
+    "autonomous-runtime",
+    "clob",
+    "market-making"
+  ],
+  "author": "Nexus Agents Protocol",
+  "license": "MIT",
+  "dependencies": {
+    "ethers": "^6.13.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.4",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  }
+}
