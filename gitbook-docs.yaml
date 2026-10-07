@@ -1,0 +1,10 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: Nexus Agents
+  structure:
+    - type: space
+      key: nexus-agents
+      title: Nexus Agents
+      path: ""
+      content:
+        directory: ./
